@@ -1,0 +1,146 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>De Reyes</ion-title>
+    </ion-toolbar>
+
+    <ion-item lines="none">
+        <ion-label>
+            <p class="btn-productos" [ngClass]="{'active': verdurasOn,'btn-disable':!verdurasOn}" (click)="activar(0)">Verduras</p>
+        </ion-label>
+        <ion-label>
+            <p class="btn-productos" [ngClass]="{'active': frutasOn,'btn-disable':!frutasOn}" (click)="activar(1)">Frutas</p>
+        </ion-label>
+        <!-- <ion-label>
+            <p class="btn-productos" [ngClass]="{'active': ensaladasOn,'btn-disable':!ensaladasOn}" (click)="activar(2)">Ensaladas</p>
+        </ion-label> -->
+    </ion-item>
+
+</ion-header>
+
+<ion-content>
+    <!-- <ion-searchbar placeholder="Que necesitas?"></ion-searchbar> -->
+    <div class="ventajas">
+        <p><strong>Por que nos prefieren?</strong></p>
+
+        <ul>
+            <li>
+                <ion-icon name="cash-outline"></ion-icon>
+                Los mejores precios
+            </li>
+            <li>
+                <ion-icon name="flash-outline"></ion-icon>
+                Rápido fácil y cómodo
+            </li>
+            <li>
+                <ion-icon name="home-outline"></ion-icon>
+                Pedidos entregados en tu hogar
+            </li>
+        </ul>
+    </div>
+
+
+
+    <!-- verduras -->
+    <div *ngIf="verdurasOn">
+        <ion-card *ngFor="let v of data.verduras">
+            <img [src]="v.img" />
+            <ion-card-header>
+                <ion-card-title>
+
+                    <ion-label>
+                        <ion-row class="datos">
+                            <ion-col>
+                                <p class="nombre">
+                                    <ion-icon name="ribbon-outline"></ion-icon>
+                                    {{v.nombre}}</p>
+                                <p class="precio_final"> {{v.precio_final}} </p>
+                                <p class="precio_inicial"> {{v.precio_inicial}}</p>
+                            </ion-col>
+                            <ion-col>
+                                <p class="medida">{{v.medida | lowercase}}</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-label>
+                </ion-card-title>
+                <ion-card-subtitle>
+                </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <p>{{v.descripcion}}</p>
+                <ion-row>
+                    <ion-col>
+                        <ion-chip *ngFor="let p of v.propiedades" outline color="success">
+                            {{p}}
+                        </ion-chip>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <!-- Frutas -->
+    <div *ngIf="frutasOn">
+        <ion-card *ngFor="let f of data.frutas">
+            <img [src]="f.img" />
+            <ion-card-header>
+                <ion-card-title>
+
+                    <ion-label>
+                        <ion-row class="datos">
+                            <ion-col>
+                                <p class="nombre">
+                                    <ion-icon name="ribbon-outline"></ion-icon>
+                                    {{f.nombre}}</p>
+                                <p class="precio_final"> {{f.precio_final}} </p>
+                                <p class="precio_inicial"> {{f.precio_inicial}}</p>
+                            </ion-col>
+                            <ion-col>
+                                <p class="medida">{{f.medida | lowercase}}</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-label>
+                </ion-card-title>
+                <ion-card-subtitle>
+                </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+                <p>{{f.descripcion}}</p>
+                <ion-row>
+                    <ion-col>
+                        <ion-chip *ngFor="let p of f.propiedades" outline color="success">
+                            {{p}}
+                        </ion-chip>
+                    </ion-col>
+                </ion-row>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+    <!-- Ensaladas -->
+    <div *ngIf="ensaladasOn">
+        <ion-card *ngFor="let e of data.ensaladas">
+            <img [src]="e.img" />
+            <ion-card-header>
+                <ion-card-subtitle>
+                    <ion-label>
+                        <h1>{{e.precio_final}} <small>/{{e.medida | lowercase}} </small></h1>
+                    </ion-label>
+                </ion-card-subtitle>
+                <ion-card-title>
+                    <ion-label>
+                        <p class="precio_inicial"> {{e.precio_inicial}}</p>
+                    </ion-label>
+                </ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                <p>{{e.descripcion}}</p>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-button expand="full" href="https://wa.me/56964274375?text=Necesito:" color="success">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+        Hacer pedido ahora</ion-button>
+</ion-footer>

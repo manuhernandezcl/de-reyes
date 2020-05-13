@@ -1,4 +1,4 @@
-/*
+    /*
  * App Global CSS
  * ----------------------------------------------------------------------------
  * Put style rules here that you want to apply globally. These styles are for
@@ -8,19 +8,70 @@
  * For more information on global stylesheets, visit the documentation:
  * https://ionicframework.com/docs/layout/global-stylesheets
  */
-
-/* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
-
-/* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
-
-/* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
+    /* Core CSS required for Ionic components to work properly */
+    
+    @import "~@ionic/angular/css/core.css";
+    /* Basic CSS for apps built with Ionic */
+    
+    @import "~@ionic/angular/css/normalize.css";
+    @import "~@ionic/angular/css/structure.css";
+    @import "~@ionic/angular/css/typography.css";
+    @import '~@ionic/angular/css/display.css';
+    /* Optional CSS utils that can be commented out */
+    
+    @import "~@ionic/angular/css/padding.css";
+    @import "~@ionic/angular/css/float-elements.css";
+    @import "~@ionic/angular/css/text-alignment.css";
+    @import "~@ionic/angular/css/text-transformation.css";
+    @import "~@ionic/angular/css/flex-utils.css";
+    ion-content {
+        --background: #ECF0F1;
+    }
+    
+    .active {
+        background: orangered;
+        color: white!important;
+        font-weight: 400;
+    }
+    
+    .btn-productos {
+        padding: 10px;
+        text-align: center;
+        border-radius: 4px;
+    }
+    
+    .ventajas {
+        background-color: #2DA0F9;
+        // background-color: #57D68D;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 4px;
+    }
+    
+    .datos {
+        border-top: 1px solid rgb(179, 175, 175);
+        .precio_inicial {
+            text-decoration: line-through;
+            color: gray;
+            // font-size: 0.5em!important;
+        }
+        .precio_final {
+            color: orangered;
+            font-size: 1.5em!important;
+            font-weight: bold;
+        }
+        .nombre {
+            text-align: left;
+            font-weight: bold;
+            // font-size: 1em!important;
+        }
+        .medida {
+            text-align: right;
+            font-weight: lighter;
+        }
+    }
+    
+    img {
+        width: 200px;
+    }
